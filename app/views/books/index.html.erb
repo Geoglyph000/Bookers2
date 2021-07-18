@@ -1,7 +1,9 @@
 <% @books.each do |book| %>
 <div>
-  <p class="book_title"><%= book.title%></p>
-  <p class="book_body"><%= book.body %></p>
+  <%= link_to book_path(book.id) do %>
+    <p class="book_title"><%= book.title%></p>
+    <p class="book_body"><%= book.body %></p>
+  <% end %>
 </div>
 <% end %>
 

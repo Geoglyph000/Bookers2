@@ -1,0 +1,10 @@
+<div class="post-body">
+  <p class="username"><%= @book.user.name %></p>
+  <p class="book_title"><%= @book.title%></p>
+  <p class="book_body"><%= @book.body %></p>
+
+  <% if @book.user == current_user %>
+    <%= link_to "Destroy", book_path(@book), method: :delete %>
+  <% end %>
+
+</div>
