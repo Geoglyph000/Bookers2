@@ -1,6 +1,6 @@
 class BooksController < ApplicationController
   def index
-    @books = Book.all
+    @books = Book.page(params[:page]).reverse_order
      @book = Book.new
   end
 
@@ -20,6 +20,13 @@ class BooksController < ApplicationController
   end
 
   def edit
+    @book = Book.find(params[:id])
+  end
+
+  def update
+    book = Book.find(params[:id])
+    book.update(book_params)
+    redirect_to :user => 'user_path(@user.id)'
   end
 
   def destroy
