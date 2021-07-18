@@ -1,3 +1,10 @@
+<% @books.each do |book| %>
+<div>
+  <p class="book_title"><%= book.title%></p>
+  <p class="book_body"><%= book.body %></p>
+</div>
+<% end %>
+
 <h1>New Book</h1>
   <%= form_with model: @book, local: true do |f| %>
     <p>Title</p>
