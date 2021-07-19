@@ -3,8 +3,8 @@
 <div>
   <%= link_to book_path(book.id) do %>
     <p class="book_title"><%= book.title%></p>
-    <p class="book_body"><%= book.body %></p>
   <% end %>
+    <p class="book_body"><%= book.body %></p>
 </div>
 <% end %>
 <%= paginate @books %>
