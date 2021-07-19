@@ -26,7 +26,7 @@ class BooksController < ApplicationController
   def update
     book = Book.find(params[:id])
     book.update(book_params)
-    redirect_to :user => 'user_path(@user.id)'
+    redirect_to book_path(book.id)
   end
 
   def destroy
