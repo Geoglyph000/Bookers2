@@ -1,6 +1,7 @@
 <h1>Books</h1>
 <% @books.each do |book| %>
 <div>
+
   <%= link_to book_path(book.id) do %>
     <p class="book_title"><%= book.title%></p>
   <% end %>
@@ -9,11 +10,4 @@
 <% end %>
 <%= paginate @books %>
 
-<h1>New Book</h1>
-  <%= form_with model: @book, local: true do |f| %>
-    <p>Title</p>
-    <%= f.text_field :title %>
-    <p>Opinion</p>
-    <%= f.text_area :body%>
-    <%= f.submit "Create Book"%>
-  <% end %>
+<%= render partial: 'books/post' %>

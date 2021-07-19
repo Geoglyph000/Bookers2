@@ -1,5 +1,6 @@
 <div class="post-body">
     <h3>Book detail</h3>
+
   <p class="username"><%= @book.user.name %></p>
 
   <p class="book_title"><%= @book.title%></p>
@@ -12,3 +13,5 @@
   <% end %>
 
 </div>
+
+<%= render partial: 'books/post' %>
