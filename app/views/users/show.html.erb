@@ -1,3 +1,4 @@
+<h1>User info</h1>
 <div class="profile-container">
   <%= attachment_image_tag @user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %>
   <h3 class="profile-name"><%= @user.name %></h3>
@@ -7,6 +8,9 @@
   <% end %>
 </div>
 
+<%= render 'books/post', book: @book %>
+
+<h1>Books</h1>
 <% @books.each do |book| %>
 <div>
   <%= link_to book_path(book.id) do %>
@@ -17,4 +21,3 @@
 <% end %>
 <%= paginate @books %>
 
-<%= render partial: 'books/post' %>

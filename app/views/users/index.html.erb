@@ -8,4 +8,6 @@
 <% end %>
 <%= paginate @users %>
 
-<%= render partial: 'books/post' %>
+
+
+<%= render 'books/post', book: @book %>
