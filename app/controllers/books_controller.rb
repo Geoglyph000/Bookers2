@@ -1,8 +1,8 @@
 class BooksController < ApplicationController
   def index
     @books = Book.page(params[:page]).reverse_order
-     @book = Book.new
-     @user = current_user
+    @book = Book.new
+    @user = current_user
   end
 
   def new
@@ -15,7 +15,8 @@ class BooksController < ApplicationController
       if @book.save
         redirect_to book_path(@book.id), notice: "New book has been created successfully."
       else
-        @books =  Book.page(params[:page]).reverse_order
+        @books = Book.page(params[:page]).reverse_order
+        @user = current_user
         render :index
       end
   end
