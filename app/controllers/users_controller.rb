@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   def index
+    @user = current_user
     @users = User.page(params[:page]).reverse_order
     @book = Book.new
   end

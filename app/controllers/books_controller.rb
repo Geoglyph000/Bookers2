@@ -1,7 +1,8 @@
 class BooksController < ApplicationController
-   def index
+  def index
     @books = Book.page(params[:page]).reverse_order
      @book = Book.new
+     @user = current_user
   end
 
   def new
@@ -21,21 +22,20 @@ class BooksController < ApplicationController
 
   def show
     @book = Book.find(params[:id])
+    @user = current_user
   end
 
   def edit
     @book = Book.find(params[:id])
-    if @book.update(book_params)
-      redirect_to book_path(@book), notice: "The  has been updated successfully."
-    else
-      render :edit
-    end
   end
 
   def update
-    book = Book.find(params[:id])
-    book.update(book_params)
-    redirect_to book_path(book.id)
+    @book = Book.find(params[:id])
+      if @book.update(book_params)
+      redirect_to book_path(@book), notice: "The post has been updated successfully."
+      else
+        render :edit
+      end
   end
 
   def destroy
