@@ -8,24 +8,20 @@
 
     <div class="col-md-8 offset-md-1">
       <h2>Book detail</h2>
-        <table class="table-hover table-inverse">
-          <thead>
-            <tr>
-              <th></th>
-              <th>Title</th>
-              <th>Opinion</th>
-              <th colspan="3"></th>
-            </tr>
-          </thead>
-
+        <table class="table">
           <tbody>
             <tr>
-              <td></td>
-              <td><%= link_to book_path(@book.id) do %><%= @book.title%><% end %></td>
-              <td><%= @book.body %></td>
-              <% if @book.user == current_user %>
-                <td><%= link_to "Edit", edit_book_path(@book), class: "btn btn-sm btn-success" %></td>
-                <td><%= link_to "Destroy", book_path(@book), method: :delete, data:{ confirm: "Are you sure to delete this book?"}, class: "btn btn-sm btn-danger" %></td>
+              <td>
+                <%= link_to user_path(@post_book.user.id) do %>
+                <%= attachment_image_tag @post_book.user, :profile_image, :fill, 50, 50, fallback: "no_image.jpg" %><br>
+                <%= @post_book.user.name %>
+                <% end %>
+              </td>
+              <td><%= link_to book_path(@post_book.id) do %><%= @post_book.title%><% end %></td>
+              <td><%= @post_book.body %></td>
+              <% if @post_book.user == current_user %>
+                <td><%= link_to "Edit", edit_book_path(@post_book), class: "btn btn-sm btn-success" %></td>
+                <td><%= link_to "Destroy", book_path(@post_book), method: :delete, data:{ confirm: "Are you sure to delete this book?"}, class: "btn btn-sm btn-danger" %></td>
               <% end %>
             </tr>
           </tbody>
@@ -34,3 +30,5 @@
 
   </div>
 </div>
+
+
