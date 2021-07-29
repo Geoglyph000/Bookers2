@@ -55,7 +55,8 @@
                   <% end%>
                 <% end %>
               </td>
-              
+    <%#コメント数表示%>
+              <td>コメント数：<%= book.book_comments.count %></td>
             </tr>
             <% end %>
             <%= paginate @books %>
