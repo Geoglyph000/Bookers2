@@ -2,7 +2,6 @@
   <%= attachment_image_tag user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %>
     <table class="table">
       <tbody>
-        <tr></tr>
         <tr>
           <th>name</th>
           <th><%= user.name %></th>
@@ -11,6 +10,8 @@
           <th>inrtoduction</th>
           <th><%= user.introduction %></th>
         </tr>
+        <tr><th>follows</th></tr>
+        <tr><th>followers</th></tr>
       </tbody>
     </table>
 
