@@ -3,7 +3,7 @@ class RelationshipsController < ApplicationController
   #フォロー/解除機能
   def create
     current_user.follow(params[:user_id])
-    redirect_to request_referer
+    redirect_to request.referer
   end
 
   def destroy
