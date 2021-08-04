@@ -26,6 +26,10 @@ class UsersController < ApplicationController
       render :edit
     end
   end
+  
+  def search
+    @results = User.search(params[:search])  
+  end
 
 
   private

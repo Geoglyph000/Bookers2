@@ -38,7 +38,11 @@
         </div>
       </nav>
       <%= form_tag(search_books_path, :method => 'get') do %>
-        <%= text_field_tag :search %>
+        <%= text_field_tag :search, '', placeholder: " book/opinion" %>
+        <%= submit_tag '検索', :name => nil %>
+      <% end %>
+      <%= form_tag(search_users_path, :method => 'get') do %>
+        <%= text_field_tag :search, '', placeholder: " user" %>
         <%= submit_tag '検索', :name => nil %>
       <% end %>
     </header>

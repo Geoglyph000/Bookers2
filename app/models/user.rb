@@ -16,6 +16,11 @@ class User < ApplicationRecord
     followings.include?(user)
   end
 
+  def self.search(search)
+    return User.all unless search
+    User.where(['name LIKE(?)',"%#{search}%"])
+  end
+
   has_many :books, dependent: :destroy
   has_many :book_comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
