@@ -16,9 +16,16 @@ class User < ApplicationRecord
     followings.include?(user)
   end
 
-  def self.search(search)
-    return User.all unless search
-    User.where(['name LIKE(?)',"%#{search}%"])
+  def self.search_for(content, method)
+    if method == 'match'
+      User.where(title: content)
+    elsif method == 'forward'
+      Book.where('title LIKE ?', "#{content}%")
+    elsif method == 'backward'
+      Book.where('title LIKE ?', "%#{content}")
+    else
+      Book.where('title LIKE ?', "%#{content}%")
+    end
   end
 
   has_many :books, dependent: :destroy

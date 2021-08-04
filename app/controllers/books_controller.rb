@@ -50,10 +50,6 @@ class BooksController < ApplicationController
     end
   end
   
-  def search
-    @results = Book.search(params[:search])  
-  end
-
   private
   def book_params
     params.require(:book).permit(:title, :body)
