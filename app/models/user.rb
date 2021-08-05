@@ -18,13 +18,13 @@ class User < ApplicationRecord
 
   def self.search_for(content, method)
     if method == 'match'
-      User.where(title: content)
+      User.where(name: content)
     elsif method == 'forward'
-      Book.where('title LIKE ?', "#{content}%")
+      User.where('name LIKE ?', "#{content}%")
     elsif method == 'backward'
-      Book.where('title LIKE ?', "%#{content}")
+      User.where('name LIKE ?', "%#{content}")
     else
-      Book.where('title LIKE ?', "%#{content}%")
+      User.where('name LIKE ?', "%#{content}%")
     end
   end
 
