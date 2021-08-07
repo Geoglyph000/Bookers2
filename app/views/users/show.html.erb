@@ -26,7 +26,7 @@
                   <%= attachment_image_tag book.user, :profile_image, :fill, 50, 50, fallback: "no_image-icon.jpeg" %>
                 <% end %>
               </td>
-              <td><%= link_to book_path(book.id) do %><%= book.title%><% end %></td>
+              <td><%= link_to book_path(book.id) do %><%= book.title %><% end %></td>
               <td><%= book.body %></td>
      <%# いいね機能 %>
               <td id="favorite_btn_<%= book.id %>">
