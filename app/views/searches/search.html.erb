@@ -49,8 +49,8 @@
                     <td><%= book.title %></td>
                     <td><%= book.body %></td>
                 <%# いいね機能 %>
-                    <td class="favorite-btn">
-                    <%= render 'favorites/favorite', book: @book %>
+                    <td id="favorite_btn_<%= book.id %>" >
+                    <%= render 'favorites/favorite', book: book %>
                    </td>
                 <%#コメント数表示%>
                    <td>コメント数：<%= book.book_comments.count %></td>

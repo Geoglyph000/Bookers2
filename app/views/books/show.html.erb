@@ -24,7 +24,7 @@
                 <td><%= link_to "Delete", book_path(@post_book), method: :delete, data:{ confirm: "Are you sure to delete this book?"}, class: "btn btn-sm btn-danger" %></td>
               <% end %>
         <%#いいね機能%>
-              <td class="favorite-btn">
+              <td id="favorite_btn_<%= book.id %>">
                 <%= render 'favorites/favorite', book: @post_book %>
               </td>
         <%#コメント数表示%>

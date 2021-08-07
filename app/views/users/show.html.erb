@@ -29,7 +29,7 @@
               <td><%= link_to book_path(book.id) do %><%= book.title%><% end %></td>
               <td><%= book.body %></td>
      <%# いいね機能 %>
-              <td class="favorite-btn">
+              <td id="favorite_btn_<%= book.id %>">
                 <%= render 'favorites/favorite', book: book %>
               </td>
     <%#コメント数表示%>
