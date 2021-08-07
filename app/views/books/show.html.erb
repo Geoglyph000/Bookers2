@@ -45,10 +45,7 @@
 
       <div class="new-comment">
         <%= render 'layouts/error', obj: @book_comment %>
-        <%= form_with(model:[@post_book, @book_comment], local: true) do |f| %>
-          <%= f.text_area :comment, placeholder: "新規コメント", :class => 'comment_area' %>
-          <%= f.submit "送信" %>
-        <% end %>
+        <%= render 'book_comments/form', book: @post_book, comment: @book_comment %>
       </div>
 
     </div>

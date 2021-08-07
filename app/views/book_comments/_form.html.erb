@@ -1,0 +1,10 @@
+<%= form_with(model:[book, comment], local: true) do |f| %>
+  <%= f.text_area :comment, placeholder: "新規コメント", :class => 'comment_area' %>
+  <%= f.submit "送信" %>
+<% end %>
+
+
+<%#
+貼り付け用
+%= render 'book_comments/form', book: @post_book, comment: @book_comment %
+%>
