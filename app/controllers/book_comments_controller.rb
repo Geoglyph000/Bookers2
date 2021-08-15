@@ -22,7 +22,7 @@ class BookCommentsController < ApplicationController
   end
 
   private
-  def book_comment_params
+  def book_comment_params #ストロング
     params.require(:book_comment).permit(:comment)
   end
 
